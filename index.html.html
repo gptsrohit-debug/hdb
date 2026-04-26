@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Arushi 💕 — 27 May 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+  --pink:    #ff6eb4;
+  --rose:    #ff1493;
+  --blush:   #ffb3d9;
+  --gold:    #ffd700;
+  --lavender:#da70d6;
+  --deep:    #1a0010;
+  --midnight:#0d001a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--deep);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ─── FIXED BG LAYERS ─── */
+#bg-gradient {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(255,20,147,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(138,43,226,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 80% at 50% 50%, rgba(255,105,180,0.04) 0%, transparent 70%),
+    linear-gradient(160deg, #1a0010 0%, #12001e 40%, #0d001a 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#stars { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+.star {
+  position:absolute;
+  border-radius:50%;
+  background:#fff;
+  animation: twinkle ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%,100% { opacity:.15; transform:scale(1); }
+  50%      { opacity:1;   transform:scale(1.8); }
+}
+
+#particles { position:fixed; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
+.hf { position:absolute; animation:floatUp linear infinite; opacity:0; user-select:none; }
+@keyframes floatUp {
+  0%   { transform:translateY(105vh) rotate(0deg) scale(.4); opacity:0; }
+  8%   { opacity:.9; }
+  92%  { opacity:.6; }
+  100% { transform:translateY(-5vh) rotate(360deg) scale(1.1); opacity:0; }
+}
+.pf { position:absolute; animation:petalFall linear infinite; opacity:0; user-select:none; }
+@keyframes petalFall {
+  0%   { transform:translateY(-5vh) translateX(0) rotate(0deg); opacity:0; }
+  8%   { opacity:.9; }
+  92%  { opacity:.6; }
+  100% { transform:translateY(108vh) translateX(60px) rotate(720deg); opacity:0; }
+}
+
+/* ─── BALLOONS ─── */
+.bl-wrap { position:fixed; bottom:0; z-index:1; pointer-events:none; animation:blFloat ease-in-out infinite; }
+.balloon {
+  width:52px; height:68px;
+  border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+  position:relative;
+  animation:blSway ease-in-out infinite;
+}
+.balloon::before { content:'▾'; position:absolute; bottom:-3px; left:50%; transform:translateX(-50%); font-size:10px; opacity:.5; }
+.balloon::after  { content:''; position:absolute; bottom:-32px; left:50%; transform:translateX(-50%); width:1px; height:32px; background:rgba(255,255,255,.35); }
+@keyframes blFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-22px)} }
+@keyframes blSway  { 0%,100%{transform:rotate(-6deg)} 50%{transform:rotate(6deg)} }
+
+/* ─── WRAPPER ─── */
+.site { position:relative; z-index:2; }
+
+/* ════════════════════════════
+   HERO
+════════════════════════════ */
+.hero {
+  min-height:100vh;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center;
+  padding:60px 20px 40px;
+  position:relative;
+}
+
+.hero-emojis { font-size:2rem; letter-spacing:12px; animation:floatBob 3s ease-in-out infinite; margin-bottom:20px; }
+@keyframes floatBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+
+.hero-top {
+  font-family:'Dancing Script', cursive;
+  font-size:clamp(1.4rem,4vw,2.2rem);
+  color:var(--blush);
+  letter-spacing:6px;
+  margin-bottom:10px;
+  animation:fadeUp .8s ease both;
+}
+
+.name-title {
+  font-family:'Dancing Script', cursive;
+  font-size:clamp(5rem,18vw,12rem);
+  line-height:1;
+  background:linear-gradient(135deg, #ffb3d9 0%, #ffffff 30%, #ff6eb4 55%, #ffd700 75%, #ff9de2 100%);
+  background-size:300% auto;
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  animation:shimmer 4s linear infinite, fadeUp .6s ease both;
+  filter:drop-shadow(0 0 50px rgba(255,110,180,.7));
+}
+@keyframes shimmer { 0%{background-position:0%} 100%{background-position:300%} }
+@keyframes fadeUp  { from{opacity:0;transform:translateY(35px)} to{opacity:1;transform:translateY(0)} }
+
+.hero-sub {
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+  font-size:clamp(1rem,2.5vw,1.4rem);
+  color:rgba(255,179,217,.75);
+  letter-spacing:4px;
+  margin-top:12px;
+  animation:fadeUp .8s ease .3s both;
+}
+
+/* countdown */
+.cd-wrap { margin:35px auto 0; animation:fadeUp 1s ease .5s both; }
+.cd-label { font-family:'Playfair Display',serif; font-style:italic; color:var(--blush); font-size:1rem; letter-spacing:3px; margin-bottom:14px; }
+.cd-boxes { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.cd-box {
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,110,180,.4);
+  border-radius:18px; padding:16px 22px; min-width:82px; text-align:center;
+  backdrop-filter:blur(12px);
+  box-shadow:0 4px 30px rgba(255,110,180,.15), inset 0 0 20px rgba(255,255,255,.02);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.cd-box:hover { transform:translateY(-5px); box-shadow:0 10px 40px rgba(255,110,180,.35); }
+.cd-num { font-family:'Dancing Script',cursive; font-size:2.8rem; color:var(--pink); display:block; line-height:1; text-shadow:0 0 25px rgba(255,110,180,.9); }
+.cd-unit { font-size:.65rem; color:var(--blush); letter-spacing:3px; text-transform:uppercase; margin-top:4px; }
+
+/* scroll cue */
+.scroll-cue { margin-top:50px; animation:bounce 2s ease-in-out infinite; color:rgba(255,179,217,.5); font-size:.85rem; letter-spacing:3px; }
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+
+/* ════════════════════════════
+   SECTION SHELL
+════════════════════════════ */
+.section { padding:80px 20px; max-width:1000px; margin:0 auto; }
+.section-sm { padding:60px 20px; max-width:760px; margin:0 auto; }
+
+.sec-title {
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(2rem,6vw,3.5rem);
+  text-align:center; margin-bottom:50px;
+  background:linear-gradient(90deg,#ff9de2,#ffd700,#ff9de2);
+  background-size:200% auto;
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  animation:shimmer 3s linear infinite;
+  filter:drop-shadow(0 0 18px rgba(255,110,180,.5));
+}
+
+/* divider */
+.divider { display:flex; align-items:center; gap:14px; margin:10px auto; padding:0 30px; max-width:700px; }
+.dline { flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(255,110,180,.5),transparent); }
+
+/* reveal */
+.rv { opacity:0; transform:translateY(45px); transition:opacity .9s ease,transform .9s ease; }
+.rv.in { opacity:1; transform:translateY(0); }
+.rv2 { transition-delay:.15s; } .rv3 { transition-delay:.3s; } .rv4 { transition-delay:.45s; }
+
+/* ════════════════════════════
+   PHOTOS
+════════════════════════════ */
+.photo-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+
+.pframe {
+  position:relative; border-radius:24px; overflow:hidden;
+  border:2px solid rgba(255,110,180,.35);
+  box-shadow:0 12px 50px rgba(255,110,180,.25), 0 0 100px rgba(255,110,180,.08);
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+.pframe:hover { transform:scale(1.04) rotate(.8deg); box-shadow:0 22px 70px rgba(255,110,180,.45), 0 0 140px rgba(255,110,180,.15); }
+.pframe img { width:100%; display:block; object-fit:cover; }
+.pcap {
+  position:absolute; bottom:0; left:0; right:0; padding:22px;
+  background:linear-gradient(transparent,rgba(0,0,0,.75));
+  font-family:'Dancing Script',cursive; font-size:1.35rem; color:var(--blush); text-align:center;
+}
+.pheart { position:absolute; top:14px; right:14px; font-size:1.6rem; animation:hb 1.4s ease-in-out infinite; }
+@keyframes hb { 0%,100%{transform:scale(1)} 50%{transform:scale(1.35)} }
+
+/* polaroid style for second photo */
+.polaroid {
+  background:#1a1a2e;
+  padding:15px 15px 45px;
+  border-radius:6px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5), 0 0 80px rgba(255,110,180,.15);
+  transform:rotate(2deg);
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+.polaroid:hover { transform:rotate(0deg) scale(1.04); box-shadow:0 30px 80px rgba(255,110,180,.4); }
+.polaroid img { width:100%; border-radius:3px; display:block; }
+.polaroid-label {
+  text-align:center; margin-top:10px;
+  font-family:'Dancing Script',cursive; font-size:1.3rem; color:var(--blush);
+}
+
+/* ════════════════════════════
+   LOVE LETTER
+════════════════════════════ */
+.letter-outer {
+  perspective:1200px;
+  margin:0 auto;
+  max-width:720px;
+  cursor:pointer;
+}
+
+/* envelope */
+.envelope {
+  position:relative;
+  background:linear-gradient(135deg,#3d0025,#28001a);
+  border:1px solid rgba(255,110,180,.4);
+  border-radius:8px 8px 0 0;
+  padding:0;
+  box-shadow:0 20px 80px rgba(255,110,180,.2);
+  overflow:visible;
+}
+
+.env-flap {
+  width:100%; padding-bottom:50%;
+  background:linear-gradient(160deg,#2d001e 0%,#3d0028 50%,#2d001e 100%);
+  clip-path:polygon(0 0,100% 0,50% 55%);
+  border-radius:8px 8px 0 0;
+  position:relative;
+  border-bottom:1px solid rgba(255,110,180,.2);
+  transition:transform .6s cubic-bezier(.25,.8,.25,1);
+  transform-origin:top center;
+  z-index:5;
+}
+.env-flap-seal {
+  position:absolute;
+  bottom:-18px; left:50%; transform:translateX(-50%);
+  background:radial-gradient(circle,#ff1493,#8b0057);
+  width:40px; height:40px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem;
+  box-shadow:0 0 20px rgba(255,20,147,.6);
+  z-index:10;
+  transition:transform .3s ease;
+}
+.envelope:hover .env-flap { transform:rotateX(-160deg); }
+.envelope:hover .env-flap-seal { transform:translateX(-50%) scale(0); }
+
+.env-body {
+  background:linear-gradient(180deg,#3a0025,#25001a);
+  padding:30px 30px 40px;
+  border-radius:0 0 8px 8px;
+  border:1px solid rgba(255,110,180,.25);
+  border-top:none;
+}
+
+.env-lines { display:flex; flex-direction:column; gap:10px; }
+.env-line { height:1px; background:rgba(255,110,180,.15); border-radius:1px; }
+
+/* the actual letter card */
+.letter-card {
+  background:linear-gradient(160deg,#fff8f5,#fff0f8,#fff5fb);
+  border-radius:4px;
+  padding:50px 45px;
+  color:#2d0018;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1rem,2vw,1.15rem);
+  line-height:2;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 40px rgba(0,0,0,.3);
+  border:1px solid rgba(255,182,193,.4);
+  max-width:720px;
+  margin:0 auto;
+}
+
+.letter-card::before {
+  content:'';
+  position:absolute; inset:0;
+  background:
+    repeating-linear-gradient(transparent, transparent 31px, rgba(255,105,180,.12) 31px, rgba(255,105,180,.12) 32px);
+  pointer-events:none;
+  top:50px;
+}
+
+.letter-card::after {
+  content:'';
+  position:absolute; top:0; left:60px;
+  width:1px; height:100%;
+  background:rgba(255,150,180,.2);
+}
+
+.ltr-date {
+  text-align:right;
+  color:#b06080;
+  font-style:italic;
+  font-size:.95rem;
+  margin-bottom:25px;
+}
+
+.ltr-dear {
+  font-family:'Dancing Script',cursive;
+  font-size:2rem;
+  color:#c0005a;
+  margin-bottom:20px;
+}
+
+.ltr-body { color:#3d0020; font-weight:400; }
+.ltr-body p { margin-bottom:18px; }
+.ltr-body em { color:#a0004a; font-style:italic; }
+.ltr-body strong { color:#c0005a; }
+
+.ltr-sign {
+  margin-top:30px;
+  text-align:right;
+  font-family:'Dancing Script',cursive;
+  font-size:1.8rem;
+  color:#c0005a;
+}
+
+/* poem inside letter */
+.poem-block {
+  background:rgba(255,105,180,.07);
+  border-left:3px solid rgba(255,105,180,.4);
+  padding:15px 20px;
+  margin:20px 0;
+  border-radius:0 8px 8px 0;
+  font-style:italic;
+  color:#7d0040;
+  line-height:2.2;
+}
+
+/* ════════════════════════════
+   SHAYARI CARDS
+════════════════════════════ */
+.shayari-grid { display:flex; flex-direction:column; gap:30px; }
+
+.sh-card {
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,110,180,.25);
+  border-radius:24px; padding:40px;
+  backdrop-filter:blur(16px);
+  box-shadow:0 10px 50px rgba(255,110,180,.1);
+  position:relative; overflow:hidden;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.sh-card:hover { transform:translateY(-6px); box-shadow:0 20px 70px rgba(255,110,180,.2); }
+.sh-card::before {
+  content:'"';
+  position:absolute; top:-30px; left:15px;
+  font-family:'Playfair Display',serif;
+  font-size:9rem; color:rgba(255,110,180,.07); line-height:1; pointer-events:none;
+}
+
+.sh-num {
+  font-family:'Dancing Script',cursive;
+  font-size:1rem; color:rgba(255,110,180,.5);
+  letter-spacing:3px; margin-bottom:16px;
+  text-transform:uppercase;
+}
+
+.sh-line {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1rem,2.2vw,1.2rem);
+  line-height:2.3; color:#f0d0e8;
+}
+.sh-hi { color:#ff9de2; font-style:italic; }
+.sh-gold { color:var(--gold); }
+
+.sh-break { color:rgba(255,110,180,.4); text-align:center; font-size:1.3rem; margin:16px 0; }
+
+/* ════════════════════════════
+   POEM SECTION
+════════════════════════════ */
+.poem-section { text-align:center; }
+
+.poem-card {
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,215,0,.2);
+  border-radius:28px; padding:55px 45px;
+  backdrop-filter:blur(20px);
+  position:relative; overflow:hidden;
+  box-shadow:0 15px 70px rgba(255,215,0,.08), 0 0 100px rgba(255,110,180,.05);
+}
+.poem-card::after {
+  content:'✦';
+  position:absolute; top:20px; right:25px;
+  font-size:3rem; color:rgba(255,215,0,.1);
+  animation:spin 8s linear infinite;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+
+.poem-title {
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.5rem,4vw,2.2rem);
+  color:var(--gold);
+  margin-bottom:30px;
+  filter:drop-shadow(0 0 15px rgba(255,215,0,.4));
+}
+
+.poem-stanza {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.05rem,2.5vw,1.3rem);
+  line-height:2.4; color:#e8d0e0;
+  margin-bottom:28px;
+  font-style:italic;
+}
+.poem-stanza:last-child { margin-bottom:0; }
+.poem-hi { color:#ffd700; }
+
+/* ════════════════════════════
+   TEDDY + CAKE
+════════════════════════════ */
+.fun-row { display:flex; gap:40px; justify-content:center; align-items:center; flex-wrap:wrap; padding:20px; }
+.fun-item { text-align:center; }
+.fun-emoji { font-size:6rem; display:block; filter:drop-shadow(0 0 25px rgba(255,110,180,.5)); }
+.teddy-e  { animation:sway 3s ease-in-out infinite; }
+.cake-e   { animation:pop  1.2s ease-in-out infinite alternate; }
+.balloon-e{ animation:floatBob 2.5s ease-in-out infinite; }
+@keyframes sway { 0%,100%{transform:rotate(-6deg) scale(1)} 50%{transform:rotate(6deg) scale(1.06)} }
+@keyframes pop  { from{transform:scale(1)} to{transform:scale(1.1)} }
+
+.fun-label { font-family:'Dancing Script',cursive; font-size:1.2rem; color:var(--blush); margin-top:10px; }
+
+/* ════════════════════════════
+   BIRTHDAY WISH BANNER
+════════════════════════════ */
+.wish-banner {
+  text-align:center; padding:70px 20px;
+  background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,20,147,.07), transparent);
+}
+
+.wish-main {
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(2.5rem,9vw,7rem);
+  background:linear-gradient(90deg,#ffd700,#ff9de2,#fff,#ff6eb4,#ffd700);
+  background-size:300% auto;
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  animation:shimmer 3s linear infinite;
+  filter:drop-shadow(0 0 30px rgba(255,215,0,.4));
+  line-height:1.1;
+}
+
+.candles { font-size:2rem; letter-spacing:10px; margin-top:15px; animation:floatBob 2s ease-in-out infinite; }
+
+.wish-sub {
+  font-family:'Playfair Display',serif; font-style:italic;
+  font-size:clamp(1rem,2.5vw,1.4rem); color:var(--blush);
+  margin-top:20px; letter-spacing:3px;
+}
+
+/* ════════════════════════════
+   MESSAGE CARD
+════════════════════════════ */
+.msg-card {
+  background:linear-gradient(135deg,rgba(255,110,180,.07),rgba(255,180,220,.03));
+  border:1px solid rgba(255,110,180,.2);
+  border-radius:28px; padding:50px 45px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.05rem,2.5vw,1.25rem);
+  line-height:2.2; color:#f0d0e8;
+  backdrop-filter:blur(18px);
+  box-shadow:0 18px 70px rgba(255,110,180,.1);
+  text-align:center;
+}
+.msg-card strong { color:#ff9de2; font-family:'Dancing Script',cursive; font-size:1.6rem; }
+.msg-card em { color:var(--gold); }
+
+/* ════════════════════════════
+   FOOTER
+════════════════════════════ */
+footer {
+  text-align:center; padding:70px 20px 50px;
+  font-family:'Dancing Script',cursive;
+  font-size:1.6rem; color:var(--blush);
+  text-shadow:0 0 20px rgba(255,110,180,.4);
+}
+.footer-sub { font-family:'Poppins',sans-serif; font-size:.85rem; color:rgba(255,179,217,.5); letter-spacing:3px; margin-top:8px; }
+.footer-hearts { font-size:2.2rem; display:block; margin-top:18px; animation:hb 1.2s ease-in-out infinite; }
+
+/* ════════════════════════════
+   UTILS
+════════════════════════════ */
+.flowers-row { text-align:center; font-size:2.2rem; letter-spacing:12px; padding:10px; animation:floatBob 4s ease-in-out infinite; }
+.sparkle-row { text-align:center; font-size:1.6rem; letter-spacing:8px; padding:8px; animation:sparkA 2s ease-in-out infinite; }
+@keyframes sparkA { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.65;transform:scale(1.08)} }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:620px) {
+  .photo-grid { grid-template-columns:1fr; }
+  .letter-card,.poem-card,.sh-card { padding:30px 22px; }
+  .msg-card { padding:35px 25px; }
+  .fun-row { gap:25px; }
+  .fun-emoji { font-size:4.5rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="bg-gradient"></div>
+<div id="stars"></div>
+<div id="particles"></div>
+
+<!-- BALLOONS -->
+<div class="bl-wrap" style="left:3%;animation-duration:6s;">
+  <div class="balloon" style="background:linear-gradient(135deg,#ff6eb4,#ff1493);"></div>
+</div>
+<div class="bl-wrap" style="left:12%;animation-duration:7.5s;animation-delay:-2s;">
+  <div class="balloon" style="background:linear-gradient(135deg,#ffb3d9,#ff69b4);"></div>
+</div>
+<div class="bl-wrap" style="right:8%;animation-duration:5.5s;animation-delay:-1.5s;">
+  <div class="balloon" style="background:linear-gradient(135deg,#ffd700,#ff8c00);"></div>
+</div>
+<div class="bl-wrap" style="right:20%;animation-duration:8s;animation-delay:-3s;">
+  <div class="balloon" style="background:linear-gradient(135deg,#da70d6,#9400d3);"></div>
+</div>
+<div class="bl-wrap" style="left:42%;animation-duration:6.5s;animation-delay:-4s;">
+  <div class="balloon" style="background:linear-gradient(135deg,#ff4500,#ff6eb4);"></div>
+</div>
+<div class="bl-wrap" style="left:27%;animation-duration:7s;animation-delay:-5s;">
+  <div class="balloon" style="background:linear-gradient(135deg,#00ced1,#1e90ff);"></div>
+</div>
+<div class="bl-wrap" style="right:35%;animation-duration:5s;animation-delay:-2.5s;">
+  <div class="balloon" style="background:linear-gradient(135deg,#98fb98,#228b22);"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SITE
+══════════════════════════════════════════════ -->
+<div class="site">
+
+<!-- ▓▓▓ HERO ▓▓▓ -->
+<section class="hero">
+  <div class="hero-emojis">🌸 💕 🌹 💐 🌺 ✨ 🎀 ✨ 🌺 💐 🌹 💕 🌸</div>
+
+  <div class="hero-top">✨ Ek Khaas Surprise ✨</div>
+  <div class="name-title">Arushi</div>
+  <div class="hero-sub">27 May 2026 &nbsp;·&nbsp; Tera Janamdin</div>
+
+  <div class="cd-wrap">
+    <div class="cd-label">💫 Din bache hain us khaas pal ke liye... 💫</div>
+    <div class="cd-boxes">
+      <div class="cd-box"><span class="cd-num" id="cd-d">30</span><div class="cd-unit">Days</div></div>
+      <div class="cd-box"><span class="cd-num" id="cd-h">00</span><div class="cd-unit">Hours</div></div>
+      <div class="cd-box"><span class="cd-num" id="cd-m">00</span><div class="cd-unit">Mins</div></div>
+      <div class="cd-box"><span class="cd-num" id="cd-s">00</span><div class="cd-unit">Secs</div></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">↓ &nbsp; scroll karo &nbsp; ↓</div>
+</section>
+
+<!-- ▓▓▓ PHOTOS ▓▓▓ -->
+<div class="divider rv"><div class="dline"></div><span>💖</span><div class="dline"></div></div>
+
+<section class="section rv">
+  <h2 class="sec-title">📸 Meri Pyaari Duniya 📸</h2>
+  <div class="photo-grid">
+
+    <div class="pframe rv rv2">
+      <img src="C:\Users\rohit\OneDrive\Desktop\IMG_2080.jpg" alt="Arushi"
+        onerror="this.parentElement.style.minHeight='320px';this.parentElement.style.background='linear-gradient(135deg,#2d0020,#1a0030,#2d0020)';this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div style=\'display:flex;align-items:center;justify-content:center;height:320px;font-family:Dancing Script,cursive;font-size:1.8rem;color:#ff9de2;flex-direction:column;gap:10px\'>💕<br>Meri Jaan<br>Arushi</div>')">
+      <div class="pcap">💕 Meri Khoobsurat Jaan</div>
+      <div class="pheart">❤️</div>
+    </div>
+
+    <div class="polaroid rv rv3">
+      <img src="C:\Users\rohit\OneDrive\Desktop\WhatsApp Image 2026-04-26 at 8.23.21 PM.jpeg" alt="Arushi"
+        onerror="this.parentElement.style.minHeight='320px';this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div style=\'display:flex;align-items:center;justify-content:center;height:320px;font-family:Dancing Script,cursive;font-size:1.8rem;color:#ff9de2;flex-direction:column;gap:10px\'>🌹<br>Meherbaan<br>Arushi</div>')">
+      <div class="polaroid-label">🌹 Meri Meherbaan 🌹</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ▓▓▓ FLOWERS ▓▓▓ -->
+<div class="flowers-row rv">🌸 🌺 🌹 🌷 🌻 🌼 💐 🌼 🌻 🌷 🌹 🌺 🌸</div>
+<div class="divider rv"><div class="dline"></div><span>🌹</span><div class="dline"></div></div>
+
+<!-- ▓▓▓ SHAYARI ▓▓▓ -->
+<section class="section-sm rv">
+  <h2 class="sec-title">💌 Dil Ki Awaz — Shayari 💌</h2>
+  <div class="shayari-grid">
+
+    <!-- Shayari 1 — the user's -->
+    <div class="sh-card rv">
+      <div class="sh-num">✦ Shayari I ✦</div>
+      <div class="sh-line">
+        <span class="sh-hi">Arushi, tera naam hi meri dhadkan ban gaya hai,</span><br>
+        Tera har khayal meri rooh ka armaan ban gaya hai,<br>
+        <span class="sh-gold">Bas ek mahina aur, phir tera woh khaas din aayega,</span><br>
+        <span class="sh-hi">Mere liye toh har din hi tera janamdin ban gaya hai.</span>
+      </div>
+      <div class="sh-break">— 💕 —</div>
+      <div class="sh-line">
+        Chand bhi sharma jaaye teri khubsurti dekh kar,<br>
+        <span class="sh-hi">Sitare bhi jhuk jaaye teri ek muskaan par,</span><br>
+        <span class="sh-gold">Us din dua hai meri, har khushi tere kadmon mein ho,</span><br>
+        <span class="sh-hi">Aur main rahun hamesha tere dil ke paas har pal.</span>
+      </div>
+    </div>
+
+    <!-- Shayari 2 -->
+    <div class="sh-card rv rv2">
+      <div class="sh-num">✦ Shayari II ✦</div>
+      <div class="sh-line">
+        <span class="sh-gold">Teri aankhon mein ek duniya hai alag,</span><br>
+        <span class="sh-hi">Jahan khwaishein hain aur khaamoshiyaan bhi,</span><br>
+        Teri muskaan pe aasmaan bhi ruk jaata hai,<br>
+        <span class="sh-gold">Aur dil ko chain aata hai tujhse mil ke bhi.</span>
+      </div>
+      <div class="sh-break">— 🌹 —</div>
+      <div class="sh-line">
+        <span class="sh-hi">Tu hai to bahar hai, tu hai to roshni hai,</span><br>
+        Teri ek chhoti si ada dil churaa leti hai,<br>
+        <span class="sh-gold">Janamdin pe yahi dua hai tere liye, Arushi,</span><br>
+        <span class="sh-hi">Khushiyon ki baarish har roz tujhe nahlaa leti rahe.</span>
+      </div>
+    </div>
+
+    <!-- Shayari 3 -->
+    <div class="sh-card rv rv3">
+      <div class="sh-num">✦ Shayari III ✦</div>
+      <div class="sh-line">
+        <span class="sh-hi">Ek mahine baad jo din aayega,</span><br>
+        <span class="sh-gold">Woh din mere liye bhi khaas hoga,</span><br>
+        Kyunki teri khushi meri khushi hai,<br>
+        <span class="sh-hi">Tera janam hi mera tyohaar hoga.</span>
+      </div>
+      <div class="sh-break">— 💫 —</div>
+      <div class="sh-line">
+        Phool bhi sharma jaaye tere aage,<br>
+        <span class="sh-gold">Chandni bhi jhuk jaaye teri raah mein,</span><br>
+        <span class="sh-hi">Tera yeh janamdin roshni bane,</span><br>
+        Aur pyaar barse teri chaah mein.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ▓▓▓ DIVIDER ▓▓▓ -->
+<div class="sparkle-row rv">✨ 💫 ⭐ 🌟 💫 ✨ 🌟 ⭐ 💫 ✨</div>
+<div class="divider rv"><div class="dline"></div><span>💝</span><div class="dline"></div></div>
+
+<!-- ▓▓▓ LOVE LETTER ▓▓▓ -->
+<section class="section-sm rv">
+  <h2 class="sec-title">💌 Ek Khat — Sirf Tere Liye 💌</h2>
+
+  <div class="letter-card">
+    <div class="ltr-date">26 April 2026 &nbsp;|&nbsp; Dilli, Hindustaan</div>
+
+    <div class="ltr-dear">Pyaari Arushi,</div>
+
+    <div class="ltr-body">
+      <p>
+        Kaafi waqt se dil mein ek baat thi — aaj likh raha hoon kyunki alfaaz
+        se hi samjhaa sakta hoon jo aankhein nahi keh paati.
+        Tera naam sunne se hi kuch alag feel hota hai, jaise subah ki pehli roshni,
+        jaise barishon mein mitti ki khushboo — <em>bilkul sahi, bilkul apna.</em>
+      </p>
+
+      <div class="poem-block">
+        Teri aankhon mein woh sitare hain<br>
+        jo raat ko bhi subah bana dete hain,<br>
+        Tere haathon ki chhoti si chuaan se<br>
+        <strong>dil ke sare dard mit jaate hain.</strong><br>
+        <br>
+        Tu jab muskurati hai, Arushi,<br>
+        toh lagta hai duniya ruk gayi hai —<br>
+        Sirf main hoon, sirf tu hai,<br>
+        <strong>aur yeh pal hamesha ke liye ruk gayi hai.</strong>
+      </div>
+
+      <p>
+        Ek mahine baad tera woh khaas din aayega — 27 May —
+        aur main soch raha hoon ki kya kya karunga.
+        Shayad phool laaunga, shayad ek chota sa cake,
+        par sabse pehle yeh khat — <em>sirf teri khatir likha hua.</em>
+      </p>
+
+      <p>
+        Tujhe pata hai na, teri ek muskaan pe main kitna kuch bhool jaata hoon?
+        Sab gusse, sab chintaayein — sab gaayab. <strong>Tu magical hai, Arushi.</strong>
+        Aur main khush hoon ki yeh jadoo mujhpar hai.
+      </p>
+
+      <div class="poem-block">
+        Chand ko teri zaroorat hai roshni ke liye,<br>
+        Phoolon ko teri zaroorat hai khushboo ke liye,<br>
+        <strong>Mujhe teri zaroorat hai — bas jeene ke liye.</strong><br>
+        <br>
+        Teri hansi meri taaqat hai,<br>
+        Teri yaad meri raat ka sahara hai,<br>
+        Tu duur ho toh bhi paas lagti hai —<br>
+        <strong>kyunki tu mere dil mein zyada rehti hai.</strong>
+      </div>
+
+      <p>
+        Is janamdin pe sirf ek dua hai meri —
+        teri zindagi mein utni khushiyaan ho
+        jitni taarein hain raat ke aasmaaan mein.
+        Tera har sapna pura ho, har dua qabool ho,
+        aur jo bhi chahti ho — woh tujhe mil jaaye.
+      </p>
+
+      <p>
+        <em>Kyunki tu deserve karti hai duniya ki saari khushiyaan.</em><br>
+        Aur thodi si extra bhi. 💕
+      </p>
+
+      <div class="poem-block">
+        Happy Birthday, meri jaan —<br>
+        <strong>27 May ko aasmaan bhi muskurayega</strong><br>
+        kyunki us din tu paida hui thi,<br>
+        aur yeh duniya thodi aur khoobsurat ho gayi thi.<br>
+        <br>
+        <em>Teri dhadkan mein meri dua hai,<br>
+        Teri muskaan mein mera jahaan hai.</em>
+      </div>
+    </div>
+
+    <div class="ltr-sign">
+      Hamesha tera, &nbsp; 💕<br>
+      <span style="font-size:2.2rem;color:#a00050;">Rohit</span>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ POEM ▓▓▓ -->
+<div class="divider rv"><div class="dline"></div><span>✨</span><div class="dline"></div></div>
+
+<section class="section-sm rv">
+  <h2 class="sec-title">🪷 Ek Kavita — Sirf Tere Naam 🪷</h2>
+
+  <div class="poem-card">
+    <div class="poem-title">🌹 "Arushi" 🌹</div>
+
+    <div class="poem-stanza">
+      Teri aankhon mein jo gehraai hai,<br>
+      woh samundaron se bhi zyada gehri hai,<br>
+      <span class="poem-hi">Teri muskaan mein jo roshni hai,</span><br>
+      woh suraj se bhi zyada roshan hai.
+    </div>
+
+    <div class="poem-stanza">
+      Tu chhoti si ek khwaish jaisi hai,<br>
+      jo dil mein roz naya rang bharti hai,<br>
+      <span class="poem-hi">Teri aahat se ghar mehakta hai,</span><br>
+      teri awaaz se zindagi nahi thakti hai.
+    </div>
+
+    <div class="poem-stanza">
+      <span class="poem-hi">Phool sun lete hain teri pukaar ko,</span><br>
+      baadal jhukke dekhte hain tera pyaar ko,<br>
+      Teri khushi mein mera sab kuch hai —<br>
+      <span class="poem-hi">main toh jee liya hoon tujhe yaad karke.</span>
+    </div>
+
+    <div class="poem-stanza">
+      27 May ko jab tere din ki baari aaye,<br>
+      <span class="poem-hi">tab har tara milke tujhe duaayein sunaaye,</span><br>
+      Teri zindagi mein pyaar ka saalab aaye,<br>
+      <span class="poem-hi">aur tu hamesha yunhi muskurati jaaye.</span>
+    </div>
+
+    <div class="poem-stanza" style="margin-bottom:0;">
+      <span class="poem-hi" style="font-size:1.4rem;">Happy Birthday, Arushi — meri duniya, meri jaan. 💕</span>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ FUN STUFF ▓▓▓ -->
+<div class="divider rv"><div class="dline"></div><span>🎈</span><div class="dline"></div></div>
+
+<div class="fun-row rv">
+  <div class="fun-item">
+    <span class="fun-emoji teddy-e">🧸</span>
+    <div class="fun-label">Tera Teddy 🥰</div>
+  </div>
+  <div class="fun-item">
+    <span class="fun-emoji cake-e">🎂</span>
+    <div class="fun-label">Tera Cake 🕯️</div>
+  </div>
+  <div class="fun-item">
+    <span class="fun-emoji balloon-e">🎈</span>
+    <div class="fun-label">Har Pal Khushiyan</div>
+  </div>
+  <div class="fun-item">
+    <span class="fun-emoji" style="animation:hb 1s ease-in-out infinite;">💐</span>
+    <div class="fun-label">Phool Tere Liye</div>
+  </div>
+</div>
+
+<!-- ▓▓▓ WISH BANNER ▓▓▓ -->
+<div class="wish-banner rv">
+  <div class="wish-main">Happy Birthday<br>Arushi 🎂</div>
+  <div class="candles">🕯️ 🕯️ 🕯️ 🕯️ 🕯️ 🕯️ 🕯️</div>
+  <div class="wish-sub">27 May 2026 — Tera Khaas Din 💕</div>
+</div>
+
+<!-- ▓▓▓ MESSAGE ▓▓▓ -->
+<section class="section-sm rv" style="padding-top:20px;">
+  <div class="msg-card">
+    <strong>Arushi,</strong><br><br>
+    Teri hansi meri subah hai.<br>
+    Teri awaaz meri raat ka sukoon.<br>
+    Tera hona mere liye sabse bada tohfa hai.<br><br>
+    <em>Janamdin mubarak ho, meri jaan. 🌹</em><br><br>
+    27 May 2026 ko yeh duniya thodi aur khoobsurat hogi —<br>
+    kyunki tu ek saal aur badi hogi, aur main<br>
+    ek saal aur tujhse pyaar karta rahunga.
+  </div>
+</section>
+
+<!-- ▓▓▓ FOOTER ▓▓▓ -->
+<div class="flowers-row rv">🌸 🌺 🌹 🌷 💐 🌷 🌹 🌺 🌸</div>
+<div class="sparkle-row rv">💫 ✨ 🌟 ⭐ ✨ 💫 ⭐ 🌟 ✨ 💫</div>
+
+<footer class="rv">
+  <div>Made with all my love — Sirf Tere Liye, Arushi 💕</div>
+  <div class="footer-sub">— Rohit &nbsp;·&nbsp; 27 May 2026 &nbsp;·&nbsp; Tera Janamdin —</div>
+  <span class="footer-hearts">💖 💕 💗 💓 💝 💗 💕 💖</span>
+</footer>
+
+</div><!-- /site -->
+
+<script>
+/* ── STARS ── */
+(function(){
+  const c=document.getElementById('stars');
+  for(let i=0;i<150;i++){
+    const s=document.createElement('div');
+    s.className='star';
+    const sz=Math.random()*3+.8;
+    Object.assign(s.style,{
+      left:Math.random()*100+'%', top:Math.random()*100+'%',
+      width:sz+'px', height:sz+'px',
+      animationDuration:(Math.random()*4+2)+'s',
+      animationDelay:(Math.random()*6)+'s',
+      opacity:Math.random()*.4+.05
+    });
+    c.appendChild(s);
+  }
+})();
+
+/* ── PARTICLES ── */
+(function(){
+  const hearts=['❤️','💕','💖','💗','💓','💝','🩷','💞','🌸','🌹'];
+  const petals=['🌸','🌺','🌹','🌷','🌼','✿','❀','🌻'];
+  const c=document.getElementById('particles');
+
+  function spawn(type,items){
+    const el=document.createElement('div');
+    el.className=type==='h'?'hf':'pf';
+    el.textContent=items[Math.floor(Math.random()*items.length)];
+    el.style.left=Math.random()*100+'vw';
+    el.style.fontSize=(Math.random()*1.4+.5)+'rem';
+    el.style.animationDuration=(Math.random()*9+6)+'s';
+    el.style.animationDelay=(Math.random()*3)+'s';
+    c.appendChild(el);
+    setTimeout(()=>el.remove(),16000);
+  }
+
+  setInterval(()=>spawn('h',hearts),500);
+  setInterval(()=>spawn('p',petals),750);
+  for(let i=0;i<12;i++) setTimeout(()=>spawn('h',hearts),i*150);
+  for(let i=0;i<8;i++)  setTimeout(()=>spawn('p',petals),i*220);
+})();
+
+/* ── COUNTDOWN to 27 May 2026 ── */
+(function(){
+  const bd=new Date('2026-05-27T00:00:00');
+  function tick(){
+    const diff=bd-new Date();
+    if(diff<=0){
+      ['cd-d','cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='00');
+      return;
+    }
+    const D=Math.floor(diff/86400000);
+    const H=Math.floor(diff%86400000/3600000);
+    const M=Math.floor(diff%3600000/60000);
+    const S=Math.floor(diff%60000/1000);
+    document.getElementById('cd-d').textContent=String(D).padStart(2,'0');
+    document.getElementById('cd-h').textContent=String(H).padStart(2,'0');
+    document.getElementById('cd-m').textContent=String(M).padStart(2,'0');
+    document.getElementById('cd-s').textContent=String(S).padStart(2,'0');
+  }
+  tick(); setInterval(tick,1000);
+})();
+
+/* ── SCROLL REVEAL ── */
+(function(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+    });
+  },{threshold:.08});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+})();
+</script>
+</body>
+</html>
